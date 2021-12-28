@@ -42,7 +42,7 @@ jobs:
                               
   upload_pypi_test:
     name: Upload to PyPI test
-    needs: [bdist]
+    needs: [bdist_linux]
     runs-on: ubuntu-latest
     steps:                       
       - uses: actions/download-artifact@v2
