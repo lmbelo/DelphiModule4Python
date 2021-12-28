@@ -40,7 +40,7 @@ jobs:
         path: dist/*
         if-no-files-found: error    
 
-  bdist_linux:
+  bdist_win:
     name: Build ${{ matrix.architecture }} BINARY on ${{ matrix.os }} for Python ${{ matrix.python-version }}
     runs-on: ${{ matrix.os }}
     strategy:
@@ -68,7 +68,7 @@ jobs:
                               
   upload_pypi_test:
     name: Upload to PyPI test
-    needs: [bdist_linux]
+    needs: [bdist_linux, bdist_win]
     runs-on: ubuntu-latest
     steps:                       
       - uses: actions/download-artifact@v2
