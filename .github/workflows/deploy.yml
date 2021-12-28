@@ -37,7 +37,7 @@ jobs:
     - name: Save sdist
       uses: actions/upload-artifact@v2
       with:
-        path: dist/*.zip
+        path: dist/*
         if-no-files-found: error                                
                               
   upload_pypi_test:
